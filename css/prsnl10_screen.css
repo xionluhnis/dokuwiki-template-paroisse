@@ -36,10 +36,11 @@ html {
 }
 body {
     margin: 0 auto;
-    background: #e4e4e4 url(images/background.png) repeat-x 0 0;
+    background: #a3ddfa url(images/background.png) repeat-x 0 0;
     font: normal 100%/1.4em Verdana,'Liberation Sans',Arial,Helvetica,sans-serif;
     /* same font stack should be used for ".dokuwiki div.toc" */
 }
+
 h1, h1 a,
 h2, h2 a,
 h3, h3 a,
@@ -56,6 +57,9 @@ h6, h6 a {
     border: none;
     padding: 0;
     clear: left; /* ideally 'both', but problems with toc */
+}
+h1, h1 a {
+    color: #E6A801;
 }
 h1,
 h2,
@@ -210,6 +214,10 @@ img {
     background-color: transparent;
     font-style: italic;
 }
+.page img {
+    border: 1px solid white;
+    box-shadow: 0 0 10px 0 gray;
+}
 hr {
     border-style: solid;
     border-width: 1px 0 0;
@@ -356,6 +364,7 @@ div.clearer {
 .dokuwiki {
     font-size: 0.875em !important; /* 14px (base: 16px from browser) */
     line-height: 1.8em !important;
+    margin: 0 50px;
 }
 .dokuwiki p,
 .dokuwiki ul,
@@ -486,31 +495,36 @@ div.notify {
  **************** Styles for the template itself, structure *******************
  ******************************************************************************/
 div#pagewrap {
-    margin: 15px auto;
-    background-color: transparent;
-    padding: 0 30px;
-    width: 890px; /* =width of 950px cause of 2*30px padding */
+    margin: 50px auto;
+    background-color: white;
+    padding: 10px;
+    width: 780px; /* =width of 950px cause of 2*30px padding */
+    /* border: 1px solid white; */
+    box-shadow: 0px 0px 50px 0px #aaa;
 }
 
 #tmpl_header {
     width: 100%;
-    height: 80px;
+    /* height: 220px; */
     padding: 0;
     margin: 0 0 2.5em 0;
-    border-bottom: 1px solid #606060;
+    border-bottom: 1px solid #c0c0c0;
+    background-color: #EDEBD6;
 }
 #tmpl_header #tmpl_header_left {
     position: relative;
     float: left;
-    width: 60%;
-    height: 100%;
+    width: 100%;
+    height: 80px;
+    background: #6abddc;
+    border-bottom: 2px solid #3a3a69;
 }
 #tmpl_header #tmpl_header_right {
     position: relative;
-    float: right;
-    width: 39%; /* let 1% space for browser rounding errors */
-    height: 100%;
-    line-height: 22px; /* px instead of em to get a cross-browser reliable baseline with the txt logo */
+    float: left;
+    width: 49%; /* let 1% space for browser rounding errors */
+    /* height: 100%; */
+    line-height: 18px; /* px instead of em to get a cross-browser reliable baseline with the txt logo */
 }
 #tmpl_header #tmpl_header_logo {
     position: absolute;
@@ -524,7 +538,7 @@ div#pagewrap {
 
 .dokuwiki div#content {
     width: 100%;
-    min-height: 870px;
+    /* min-height: 870px; */
     padding: 0;
 }
 .dokuwiki .page {
@@ -533,59 +547,81 @@ div#pagewrap {
 }
 
 /* header: dynamic text logo */
-#tmpl_header #tmpl_header_logo a.tmpl_header_logo_txt,
-#tmpl_header #tmpl_header_logo a.tmpl_header_logo_txt:visited,
-#tmpl_header #tmpl_header_logo a.tmpl_header_logo_txt:hover,
-#tmpl_header #tmpl_header_logo a.tmpl_header_logo_txt:active {
+#tmpl_header #tmpl_header_title a.tmpl_header_logo_txt,
+#tmpl_header #tmpl_header_title a.tmpl_header_logo_txt:visited,
+#tmpl_header #tmpl_header_title a.tmpl_header_logo_txt:hover,
+#tmpl_header #tmpl_header_title a.tmpl_header_logo_txt:active {
     font-family: 'Droid Sans','Liberation Sans',Arial,Helvetica,sans-serif;
-    font-size: 48px;   /* px instead of em to get a cross-browser reliable... */
-    line-height: 59px; /* ...baseline with the header nav within tmpl_header_right */
+    font-size: 32px;   /* px instead of em to get a cross-browser reliable... */
+    line-height: 80px; /* ...baseline with the header nav within tmpl_header_right */
     vertical-align: top;
     font-weight: bold;
     text-decoration: none;
-    color: __text__;
-    text-transform: uppercase;
+    color: white;
+    text-transform: none;
     margin: 0;
-    padding: 0;
+    padding: 0 20px;
     outline: 0;
 }
 /* header: image base logo (-> prsnl10/user/logo.[png|gif|jpeg]) */
-#tmpl_header #tmpl_header_logo #tmpl_header_logo_img,
-#tmpl_header #tmpl_header_logo a,
-#tmpl_header #tmpl_header_logo a:link,
-#tmpl_header #tmpl_header_logo a:visited,
-#tmpl_header #tmpl_header_logo a:hover,
-#tmpl_header #tmpl_header_logo a:active {
+#tmpl_header #tmpl_header_logo {
+    width: 100%;
+}
+#tmpl_header #tmpl_header_logo #tmpl_header_logo_img a,
+#tmpl_header #tmpl_header_logo #tmpl_header_logo_img a:link,
+#tmpl_header #tmpl_header_logo #tmpl_header_logo_img a:visited,
+#tmpl_header #tmpl_header_logo #tmpl_header_logo_img a:hover,
+#tmpl_header #tmpl_header_logo #tmpl_header_logo_img a:active {
     text-decoration: none;
     border: 0 none;
+    margin: 0;
+    padding: 0;
+    outline: 0 none;
+}
+#tmpl_header #tmpl_header_logo #tmpl_header_logo_img {
+    position: absolute;
+    right: 20px;
+    top: -15px;
+    border: 3px solid white;
+    box-shadow: 0 0 20px 0 gray;
+    width: 400px;
     margin: 0;
     padding: 0;
     outline: 0 none;
 }
 /* header: optional navigation */
 #tmpl_header #tmpl_header_nav {
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    float: left;
     font-family: 'Droid Sans','Liberation Sans',Arial,Helvetica,sans-serif;
     font-size: 112.5%; /* 18px (base: 16px) */
     margin-bottom: 8px;
     width: 100%;
-    text-align: right;
+    text-align: left;
 }
 #tmpl_header #tmpl_header_nav a,
 #tmpl_header #tmpl_header_nav a:visited {
     color: __text__;
-    text-transform: uppercase;
+    text-transform: none;
     text-decoration: none;
     border: 0 none;
     outline: 0 none;
 }
 #tmpl_header #tmpl_header_nav a:hover {
     color: __text__;
-    text-transform: uppercase;
+    text-transform: none;
     text-decoration: underline;
     border: 0 none;
     outline: 0 none;
+}
+#tmpl_header #tmpl_header_nav ul {
+    margin: 20px 0 0 0;
+ }
+#tmpl_header #tmpl_header_nav li {
+    list-style: none;
+    display: inline-block;
+    width: 120px;
+    margin-bottom: 15px;
 }
 
 #tmpl_footer {

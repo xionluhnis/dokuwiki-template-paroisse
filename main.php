@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Main file of the "prsnl10" template for DokuWiki
+ * Main file of the "paroisse" template for DokuWiki
  *
  *
  * LICENSE: This file is open source software (OSS) and may be copied under
@@ -127,6 +127,13 @@ if (tpl_getConf("prsnl10_loaduserjs") && file_exists(DOKU_TPLINC."user/user.js")
         <div id="tmpl_header_left">
             <?php
             //include userdefined logo or show text-headline
+            
+            // title
+            echo "<div id=\"tmpl_header_title\">\n                <a href=\"".DOKU_BASE."\" name=\"dokuwiki__top\" id=\"dokuwiki__top\" accesskey=\"h\"";
+            echo " class=\"tmpl_header_logo_txt\">".hsc($conf["title"])."</a>";
+            echo "\n            </div>\n";
+            
+            // logo
             echo "<div id=\"tmpl_header_logo\">\n                <a href=\"".DOKU_BASE."\" name=\"dokuwiki__top\" id=\"dokuwiki__top\" accesskey=\"h\"";
             if (file_exists(DOKU_TPLINC."user/logo.png")){
                 //user defined PNG
@@ -137,11 +144,9 @@ if (tpl_getConf("prsnl10_loaduserjs") && file_exists(DOKU_TPLINC."user/user.js")
             }elseif (file_exists(DOKU_TPLINC."user/logo.jpg")){
                 //user defined JPG
                 echo "><img src=\"".DOKU_TPL."user/logo.jpg\" id=\"tmpl_header_logo_img\" alt=\"\"/></a>";
-            }else{
-                //default
-                echo " class=\"tmpl_header_logo_txt\">".hsc($conf["title"])."</a>";
             }
             echo "\n            </div>\n";
+            
             ?>
         </div>
 

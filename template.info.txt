@@ -1,7 +1,7 @@
-﻿base     prsnl10
-author   ARSAVA
-email    dokuwiki@dev.arsava.com
-date     2014-02-09
-name     prsnl10 template
-desc     Clean and minimalist template for personal and/or portfolio websites.
-url      https://www.dokuwiki.org/template:prsnl10
+﻿base     paroisse
+author   Alexandre Kaspar
+email    xion.luhnis@gmail.com
+date     2014-04-04
+name     paroisse template
+desc     Dokuwiki template for the parish of Port-Valais, Switzerland
+url      https://github.com/xionluhnis/dokuwiki-template-paroisse/
