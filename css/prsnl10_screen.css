@@ -625,11 +625,11 @@ div#pagewrap {
 }
 
 #tmpl_footer {
-    border-top: 1px solid #606060;
+    border-top: 1px solid #A1A1A1;
     margin: 1em 0;
     padding: 0.2em 0;
     font-size: 0.714em; /* 10px (base: 14px) */
-    color: __text_neu__;
+    color: #B1B1B1;
     text-align: center;
 }
 #tmpl_footer a,
@@ -649,7 +649,19 @@ div#pagewrap {
     float: right;
 }
 #tmpl_footer #tmpl_footer_metainfo {
-    margin-top: 1em;
+    /* margin-top: 1em; */
+}
+#tmpl_footer #tmpl_footer_metainfo, #tmpl_footer #licenseinfo {
+    display: inline-block;
+}
+#tmpl_footer #tmpl_footer_metainfo a {
+    color: #B1B1B1;
+}
+#tmpl_footer #tmpl_footer_metainfo a:hover {
+    color: #6BACFF;
+}
+#tmpl_footer #tmpl_footer_metainfo a.mail {
+    background-image: url(images/email-light.png); 
 }
 #tmpl_footer a[rel=license] {
     margin-left: 5px;

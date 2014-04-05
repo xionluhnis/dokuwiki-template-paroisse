@@ -279,8 +279,9 @@ tpl_content(false);
             <div class="clearer"></div>
             <div id="tmpl_footer_metainfo">
                 <!-- Please do NOT remove the following prsnl10 and/or DokuWiki link/notice. Thank you. :-) -->
-                <a href="https://www.dokuwiki.org/template:prsnl10" target="_blank"<?php echo ((cleanID(getID()) === "start") ? "" : " rel=\"nofollow\"") ?>>prsnl10 on DW</a> under the hood
+                <!-- Template by <a href="http://www.wox-xion.ch" rel="nofollow" target="_blank">Alexandre Kaspar</a>, based on <a href="https://www.dokuwiki.org/template:prsnl10" target="_blank"<?php echo ((cleanID(getID()) === "start") ? "" : " rel=\"nofollow\"") ?>>prsnl10</a>. --> 
                 <?php
+                echo "<!-- ";
                 if(!empty($INFO["exists"]) &&
                    tpl_getConf("prsnl10_showpageinfo")) {
                     echo " &#160;|&#160; ";
@@ -290,6 +291,7 @@ tpl_content(false);
                     echo " &#160;|&#160; ";
                     tpl_userinfo();
                 }
+                echo " -->";
                 //additional footer content?
                 if (tpl_getConf("prsnl10_footer")){
                     if (empty($conf["useacl"]) ||
